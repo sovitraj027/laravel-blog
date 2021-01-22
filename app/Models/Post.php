@@ -7,9 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 class Post extends Model
-{//gaurded vaneko opposite of fillable
+
+{
+    //gaurded vaneko opposite of fillable
     protected $guarded = [];
     use HasFactory;
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     protected static function boot()
     {

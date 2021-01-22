@@ -30,4 +30,13 @@ class PostRequest extends FormRequest
             'image' => 'image',
         ];
     }
+
+    public function image_upload($post)
+    {
+        $image = $this->file('image');
+        $filename = time() . '.' . $image->GetClientOriginalExtension();
+        $location = $this->file('image')->storeAs('public/post_image', $filename);
+        $post->image = $filename;
+        $post->save();
+    }
 }
