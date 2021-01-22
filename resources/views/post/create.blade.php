@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+    @include('layouts.errors')
     <div class="card card-primary mt-3">
         <div class="card-header">
             <h3 class="card-title">Create Post</h3>
@@ -20,9 +20,8 @@
                 <div class="form-group">
                     <label>Description</label>
                     <textarea class="form-control" rows="3" name="description"
-                              id="article-ckeditor">{{old('description')}}</textarea>
+                              id="abc">{{old('description')}}</textarea>
                 </div>
-
 
 
                 <div class="form-group">
@@ -44,10 +43,4 @@
     </div>
 @endsection
 
-@section('js')
 
-    <script src="//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace('article-ckeditor');
-    </script>
-@endsection
